@@ -75,7 +75,7 @@ local oianb = w:Button("Render Places", function()
     -- Broly
 local plr = game:service"Players".LocalPlayer;
 local tween_s = game:service"TweenService";
-local info = TweenInfo.new(2,Enum.EasingStyle.Quad);
+local info = TweenInfo.new(2.5,Enum.EasingStyle.Quad);
 function tp(...)
    local tic_k = tick();
    local params = {...};
