@@ -66,8 +66,8 @@ local a = game:GetService("Workspace").FishingSpawns
 	"SendNotification",
 		{
 			Title = "Try Rendering Again \n 'Or Renaming' ",
-			Duration = 5,
-			Text = ''
+			Duration = 8,
+			Text = 'Make Sure To Turn Off \n Auto Fish'
 		}
 	)
     end
