@@ -98,6 +98,43 @@ end
 end
 end)
 
+w:Section("Another")
+local fish = w:Button("Auto Fish On", function()
+   _G.b = true
+while _G.b do
+wait(1.8)
+local a1 = "RawTrout"
+local a2 = "RawSalmon"
+local a3 = "RawRainbowFish"
+local a4 = "RawSailfish"
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a1)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a2)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a3)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a4)
+end 
+end)
+
+local afafafaf = w:Button("Auto Fish Off", function()
+    _G.b = false
+while _G.b do
+wait(1.8)
+local a1 = "RawTrout"
+local a2 = "RawSalmon"
+local a3 = "RawRainbowFish"
+local a4 = "RawSailfish"
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a1)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a2)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a3)
+wait(1.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeServer(a4)
+end
+end)
+
 local afi = w:Button("Destroy GUI", function()
     game.CoreGui.ScreenGui:Destroy()
 end)
