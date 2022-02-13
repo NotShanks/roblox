@@ -99,7 +99,7 @@ end
 end)
 
 w:Section("Another")
-local fish = w:Button("Auto Fish On", function()
+local fish = w:Button("Auto Cook On", function()
    _G.b = true
 while _G.b do
 wait(1.8)
@@ -117,7 +117,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.CookDish:InvokeS
 end 
 end)
 
-local afafafaf = w:Button("Auto Fish Off", function()
+local afafafaf = w:Button("Auto Cook Off", function()
     _G.b = false
 while _G.b do
 wait(1.8)
