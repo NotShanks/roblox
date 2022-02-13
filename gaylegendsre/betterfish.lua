@@ -2,17 +2,6 @@ local library = loadstring(game:HttpGet("https://pastebin.com/raw/AtQAJECZ", tru
 local w = library:CreateWindow('fish')
 w:Section('Top')
 
-local b1 = w:Button("rename all", function()
-local count = 1
-for k, v in pairs(game:GetService("Workspace").FishingSpawns:GetChildren()) do 
-   if v.Name == "Fishing" then
-       v.Name = "Fishing" .. count
-       count = count + 1
-        print(v.Name)
-   end
-end
-end)
-
 local af3 = w:Button("Render Fish Places", function()
     -- Broly
 local plr = game:service"Players".LocalPlayer;
@@ -34,9 +23,56 @@ wait(3.5)
 tp(-3225, 444, -1013);
 end)
 
+local b1 = w:Button("rename all", function()
+local count = 1
+for k, v in pairs(game:GetService("Workspace").FishingSpawns:GetChildren()) do 
+   if v.Name == "Fishing" then
+       v.Name = "Fishing" .. count
+       count = count + 1
+        print(v.Name)
+   end
+end
+end)
+
+local ja3 = w:Button("Unname FishingSpawns", function()
+for j, n in pairs(game:GetService("Workspace").FishingSpawns:GetChildren()) do 
+       n.Name = "Fishing"
+end
+wait(1)
+game:GetService("StarterGui"):SetCore(
+	"SendNotification",
+		{
+			Title = "Sucessfully Unnamed\n FishingSpawns",
+			Duration = 5,
+			Text = ''
+		}
+	)
+end)
 
 w:Section("Bottom")
 local aaa = w:Button("Auto Fish On", function()
+local a = game:GetService("Workspace").FishingSpawns
+    if a:FindFirstChild("Fishing40") then
+        game:GetService("StarterGui"):SetCore(
+	"SendNotification",
+		{
+			Title = "Working...",
+			Duration = 5,
+			Text = ''
+		}
+	)
+        else 
+            game:GetService("StarterGui"):SetCore(
+	"SendNotification",
+		{
+			Title = "Try Rendering Again \n 'Or Renaming' ",
+			Duration = 5,
+			Text = ''
+		}
+	)
+    end
+        
+wait(1)
  _G.on = true
 while _G.on and wait() do
 local FishingSpawns = workspace:FindFirstChild'FishingSpawns'
