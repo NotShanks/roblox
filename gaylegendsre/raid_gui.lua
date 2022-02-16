@@ -31,9 +31,9 @@ while rs:wait() do
        if v:FindFirstChild("HumanoidRootPart") then
        TweenGoal.CFrame = v.HumanoidRootPart.CFrame*CFrame.new(0,25,0)
        Tween = TweenService:Create(getfenv().plr.Character.HumanoidRootPart,TweenInfo,TweenGoal)
-       repeat wait(.1)
+       repeat wait(.3)
        Tween:Play() 
-       wait(.2)
+       wait(.3)
                      local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
     [2] = v.HumanoidRootPart.Position
