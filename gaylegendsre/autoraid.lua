@@ -1,4 +1,3 @@
---script was made using google
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
@@ -42,19 +41,22 @@ game:GetService("Players").LocalPlayer.Character.LightKick.ServerScript.Throw:Fi
 end
 end
 end
--- auto eat/heal
-while wait() do
+end)
+
+--auto eat 
+while true do pcall(function()
 if game.Players.LocalPlayer.Character.Health.Value <= 1200 then
-    for i = 1, 15 do
+    for i = 1, 20 do
 local args = {
     [1] = "CookedSalmon"
 }
-wait(.8)
+wait(.5)
 game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.Eat:FireServer(unpack(args))
 end
 end
-end
 end)
+end
+
 local noclip = true
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -76,7 +78,7 @@ while true do
 
     game:GetService("RunService").Stepped:wait()
 end
-wait()
+wait(.1)
 local mouse = game.Players.LocalPlayer:GetMouse()
 repeat wait() until mouse
 local plr = game.Players.LocalPlayer
