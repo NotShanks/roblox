@@ -1,4 +1,4 @@
---this script is highly skidded ahahahahha
+--this script was made using google.
 pcall(function()
 local ar = {"Lahmu", "DesertSnake", "Enkidu", "MysticIllusionist", "Gilgamesh"}
     
@@ -34,7 +34,7 @@ end
 end
 end
 
-if game.Workspace.parreh321.Health.Value <= 1500 then
+if game.Players.LocalPlayer.Character.Health.Value <= 1500 then
     for i = 1, 20 do
 local args = {
     [1] = "CookedSalmon"
