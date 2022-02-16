@@ -124,7 +124,7 @@ lastctrl = {f = 0, b = 0, l = 0, r = 0}
 speed = 0
 bg:Destroy()
 bv:Destroy()
-plr.Character.Humanoid.PlatformStand = false
+plr.Character.Humanoid.PlatformStand = true
 end
 
 mouse.KeyUp:connect(function(key)
