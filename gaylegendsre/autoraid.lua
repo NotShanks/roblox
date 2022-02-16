@@ -1,4 +1,4 @@
---this script was made using google.
+--script was made using google
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
@@ -43,15 +43,14 @@ end
 end
 end
 -- auto eat/heal
-while true do
+while wait() do
 if game.Players.LocalPlayer.Character.Health.Value <= 1500 then
     for i = 1, 20 do
 local args = {
     [1] = "CookedSalmon"
 }
-
-game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.Eat:FireServer(unpack(args))
 wait(.8)
+game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.Eat:FireServer(unpack(args))
 end
 end
 end
