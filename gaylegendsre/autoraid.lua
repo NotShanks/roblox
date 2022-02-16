@@ -44,8 +44,8 @@ end
 end
 -- auto eat/heal
 while wait() do
-if game.Players.LocalPlayer.Character.Health.Value <= 1500 then
-    for i = 1, 20 do
+if game.Players.LocalPlayer.Character.Health.Value <= 1200 then
+    for i = 1, 15 do
 local args = {
     [1] = "CookedSalmon"
 }
@@ -145,6 +145,15 @@ game:GetService("StarterGui"):SetCore(
 	"SendNotification",
 		{
 			Title = "\n AutoRaid (Equip LightKick \n then \n press J to start)",
+			Duration = 9,
+			Text = ''
+		}
+	)
+wait(1)
+game:GetService("StarterGui"):SetCore(
+	"SendNotification",
+		{
+			Title = "\nIf Script stop working \n then unequp light kick \n then re-execute",
 			Duration = 10,
 			Text = ''
 		}
