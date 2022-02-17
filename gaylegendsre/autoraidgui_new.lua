@@ -3,7 +3,6 @@ local w = library:CreateWindow('auto raids')
 w:Section('Make Sure To Turn All On')
 
 local a1 = w:Button("Auto Raid", function()
-pcall(function()
 local ar = {"Lahmu", "DesertSnake", "Enkidu", "MysticIllusionist", "Gilgamesh"}   
     
 Speed = 4 -- if it kicks u increase the number
@@ -13,19 +12,19 @@ TweenGoal = {}
 --------------
 getfenv().plr = game.Players.LocalPlayer
 rs = game:service'RunService'.RenderStepped
-t = true
-while rs:wait(.1) do
-       getfenv().plr.Character.Humanoid:ChangeState(11)
+pcall(function()
+while wait() do
    for i,v in pairs(workspace.Mobs:GetChildren()) do
        for a,b in pairs(ar) do
        if string.match(v.Name, b) then
-       if v:FindFirstChild("HumanoidRootPart") then
+       if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
        TweenGoal.CFrame = v.HumanoidRootPart.CFrame*CFrame.new(0,25,0)
        Tween = TweenService:Create(getfenv().plr.Character.HumanoidRootPart,TweenInfo,TweenGoal)
        repeat wait()
        Tween:Play() 
-       wait(.3)
-       until v.Humanoid.Health == 0 
+       wait(.5)
+       until v.Health.Value == 0 
+       Tween:Cancel();
 end
 end
 end
