@@ -18,8 +18,7 @@ TweenGoal = {}
 getfenv().plr = game.Players.LocalPlayer
 rs = game:service'RunService'.RenderStepped
 t = true
-while rs:wait() do
-       getfenv().plr.Character.Humanoid:ChangeState(11)
+while rs:wait(.1) do
    for i,v in pairs(workspace.Mobs:GetChildren()) do
        for a,b in pairs(ar) do
        if string.match(v.Name, b) then
@@ -28,7 +27,7 @@ while rs:wait() do
        Tween = TweenService:Create(getfenv().plr.Character.HumanoidRootPart,TweenInfo,TweenGoal)
        repeat wait(.1)
        Tween:Play() 
-       wait(.2)
+       wait(.3)
                      local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
     [2] = v.HumanoidRootPart.Position
@@ -42,20 +41,6 @@ end
 end
 end
 end)
-
---auto eat 
-while true do pcall(function()
-if game.Players.LocalPlayer.Character.Health.Value <= 1200 then
-    for i = 1, 20 do
-local args = {
-    [1] = "CookedSalmon"
-}
-wait(.5)
-game:GetService("Players").LocalPlayer.PlayerGui.Parkour.Script.Eat:FireServer(unpack(args))
-end
-end
-end)
-end
 
 local noclip = true
 local player = game.Players.LocalPlayer
