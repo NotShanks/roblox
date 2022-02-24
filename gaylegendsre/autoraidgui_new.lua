@@ -1,30 +1,41 @@
+local bv = Instance.new("BodyVelocity")
+bv.Velocity = Vector3.new(0, 0, 0)
+bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+bv.P = 9000
+bv.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+--delete trash
+
+
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/AtQAJECZ", true))()
 local w = library:CreateWindow('auto raids')
 w:Section('Make Sure To Turn All On')
 
-local a1 = w:Button("Auto Raid", function()
+
+
+local a1 = w:Button("Auto Raid (Teleport Only)", function()
+
 local ar = {"Lahmu", "DesertSnake", "Enkidu", "MysticIllusionist", "Gilgamesh"}   
     
-Speed = 4 -- if it kicks u increase the number
+Speed = 5
 TweenService = game:service'TweenService'
-TweenInfo = TweenInfo.new(Speed)
+TweenInfo = TweenInfo.new(Speed, Enum.EasingStyle.Linear)
 TweenGoal = {}
 --------------
 getfenv().plr = game.Players.LocalPlayer
-rs = game:service'RunService'.RenderStepped
 pcall(function()
 while wait() do
    for i,v in pairs(workspace.Mobs:GetChildren()) do
        for a,b in pairs(ar) do
        if string.match(v.Name, b) then
-       if v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
-       TweenGoal.CFrame = v.HumanoidRootPart.CFrame*CFrame.new(0,25,0)
+       if v ~= nil and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health ~= 0 then
+       TweenGoal.CFrame = v.HumanoidRootPart.CFrame*CFrame.new(0,15,0)
        Tween = TweenService:Create(getfenv().plr.Character.HumanoidRootPart,TweenInfo,TweenGoal)
        repeat wait()
+           game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
        Tween:Play() 
-       wait(.5)
-       until v.Health.Value == 0 
-       Tween:Cancel();
+       wait(3)
+       until v.Humanoid.Health == 0 
 end
 end
 end
@@ -32,6 +43,7 @@ end
 end
 end)
 end)
+
 
 local a2 = w:Button("No-Clip", function()
 local noclip = true
@@ -39,7 +51,7 @@ local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 plr = game.Players.LocalPlayer
 
-while true do
+while true do wait()
     player = game.Players.LocalPlayer
     character = player.Character
 
@@ -53,7 +65,6 @@ while true do
         end
     end
 
-    game:GetService("RunService").Stepped:wait()
 end
 end)
 
@@ -110,11 +121,12 @@ end
 Fly()
 end)
 
-w:Section("Healing")
+
+w:Section("")
 local b = w:Button("Auto-Eat", function()
     while wait() do pcall(function()
-if game.Players.LocalPlayer.Character.Health.Value <= 1200 then
-    for i = 1, 20 do
+if game.Players.LocalPlayer.Character.Health.Value <= 800 then
+    for i = 1, 10 do
 local args = {
     [1] = "CookedSalmon"
 }
@@ -126,7 +138,7 @@ end)
 end
 end)
 
-local ngiw = w:Button("AutoMove", function()
+local ngiw = w:Button("LightKick", function()
     pcall(function()
 _G.on = true
 while _G.on and wait() do
@@ -136,7 +148,7 @@ while _G.on and wait() do
     for i,v in pairs(workspace.Mobs:GetDescendants()) do
         for a,b in pairs(ar) do
         if string.match(v.Name, b) and v:FindFirstChild("HumanoidRootPart") then
-            wait(.5)
+            wait(.4)
             local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
     [2] = v.HumanoidRootPart.Position
@@ -148,4 +160,26 @@ end
 end
 end)
     
+end)
+
+local jejg = w:Button("LightBeam (Only If Stuck", function()
+_G.obn = true
+while _G.obn and wait() do
+    local ar = {"Lahmu", "DesertSnake", "Enkidu", "MysticIllusionist", "Gilgamesh"}
+
+
+    for i,v in pairs(workspace.Mobs:GetDescendants()) do
+        for a,b in pairs(ar) do
+        if string.match(v.Name, b) and v:FindFirstChild("HumanoidRootPart") then
+            wait(.2)
+            local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = v.HumanoidRootPart.Position
+}
+game:GetService("Players").LocalPlayer.Character.LightBeam.ServerScript.Charge:FireServer(unpack(args))
+end
+end
+end
+end
+
 end)
