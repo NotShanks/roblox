@@ -20,7 +20,9 @@ end
 end
 end)
 end
-wait()
+end)
+
+local bwgg = w:Button("AutoFarm2 On", function()
 _G.oon = true
 while _G.oon and wait() do
 pcall(function()
@@ -39,37 +41,8 @@ end)
 
 local b1 = w:Button("AutoFarm Off", function()
 _G.on = false
-while _G.on and wait() do
-pcall(function()
-    if game.Players.LocalPlayer.Team.Name == "Human" then
-  
-    for i,v in pairs(game:GetService("Workspace").Unbreakable.Characters.Orc:GetDescendants()) do
-              if string.find(v.Name, "Orc") or string.find(v.Name, "Elite") or string.find(v.Name, "Tyrant") and v.Humanoid.Health ~= 0 then
-                  if v.Name ~= "Orc General" then
-
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame*CFrame.new(0,0,5)
-
-end
-end
-end
-end
-end)
-end
 wait()
 _G.oon = false
-while _G.oon and wait() do
-pcall(function()
-if game.Players.LocalPlayer.Team.Name == "Orc" then
-for i,v in pairs(game:GetService("Workspace").Unbreakable.Characters.Human:GetChildren()) do
-               if string.find(v.Name, "Human") or string.find(v.Name, "Rogue") then
-               if v.Name ~= "Human General" and v.Humanoid.Health ~= 0 then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Torso.CFrame*CFrame.new(0,0,5)
-end
-end
-end
-end
-end)
-end
 end)
 
 w:Section("Middle")
