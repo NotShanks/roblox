@@ -1,0 +1,11 @@
+pos = 
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+wait(0.1)
+local gay;
+gay = game.Players.LocalPlayer.Character.HumanoidRootPart:GetPropertyChangedSignal("CFrame"):connect(function()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+   wait(1)
+   gay:Disconnect()
+   wait(0.5)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+end)
