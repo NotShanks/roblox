@@ -1,0 +1,15 @@
+    _G.tog = false
+local cameraCFrame = CFrame.new(374.418549, 121.311707, -361.583221, -0.153490022, -0.450888693, 0.879283905, 0, 0.889828146, 0.456295729, -0.988150179, 0.0700368434, -0.136579752)
+
+
+while _G.tog do 
+pcall(function() 
+for _, v in next, game.Players.LocalPlayer.Backpack:GetChildren() 
+do if v.Name == "Spellbook of the Secrets" then v.Parent = game.Players.LocalPlayer.Character
+    end
+end
+wait(2)
+game:GetService("Workspace").Camera.CFrame = cameraCFrame
+task.wait()
+end)
+end
