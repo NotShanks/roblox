@@ -1,41 +1,21 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/backups/main/ayalib.lua", true))()
 local w = library:CreateWindow('Bad Craftwars Gems')
-w:Section('Top')
-
-local b1 = w:Button("Auto Kill Spectre On", function()
-_G.aaaaa = true
-while _G.aaaaa do wait() pcall(function()
-    for i,v in pairs(game:GetService("Workspace").Mobs:GetDescendants()) do 
-        if string.find(v.Name, "Spectre") then
-            wait(1)
-            v.Humanoid.Health = 0
-end
-end
-end)
-end
-end)
-
-local b2 = w:Button("Auto Kill Spectre Off", function()
-    _G.aaaaa = false
-    while _G.aaaaa do wait()
-        end
-end)
 
 w:Section("Middle")
 
-local a1 = w:Button("Auto Summon On", function()
-    _G.aa = true
-while _G.aa do 
-    task.wait(200)
-game.Players:Chat("spectre i challenge you")
+local a1 = w:Button("Auto Trade On", function()
+_G.b = true
+while _G.b and wait(.5) do 
+    
+fireclickdetector(game:GetService("Workspace").Model.Praefactus.Head.ClickDetector)
 end
 end)
 
-local a2 = w:Button("Auto Summon Off", function()
-        _G.aa = false
-while _G.aa do 
-    task.wait(200)
-game.Players:Chat("spectre i challenge you")
+local a2 = w:Button("Auto Trade Off", function()
+_G.b = false
+while _G.b and wait(.5) do 
+    
+fireclickdetector(game:GetService("Workspace").Model.Praefactus.Head.ClickDetector)
 end
 end)
 
@@ -47,7 +27,6 @@ while _G.on do
 for i,v in pairs(game:GetService("Workspace").Plates:GetDescendants()) do 
     if v:FindFirstChild("TouchInterest") then
 firetouchinterest(v, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"),0)
-wait()
 firetouchinterest(v, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"),1)
 end
 end
@@ -65,5 +44,25 @@ wait()
 firetouchinterest(v, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"),1)
 end
 end
+end
+end)
+
+w:Section("Auto")
+local g = w:Button("Auto Click On", function()
+     local vu = game:GetService("VirtualUser")
+_G.yeet = true
+while _G.yeet and wait() do
+vu:Button1Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(0.1)
+vu:Button1Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end
+end)
+
+local g1 = w:Button("Auto Click Off", function()
+_G.yeet = false
+while _G.yeet and wait() do
+vu:Button1Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+wait(0.1)
+vu:Button1Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end
 end)
