@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/backups/main/ayalib.lua", true))()
 local w = library:CreateWindow('No Bitches Simulator')
-w:Section('Made by #7777')
+w:Section('Made by #')
 
 local a = w:Button("Auto Collect Magnet", function()
     shared.nocooldown = shared.nocooldown or false
@@ -16,18 +16,15 @@ if shared.nocooldown then
     return
 end
 shared.nocooldown = true
- local ImGay = game:GetService("Players").LocalPlayer.PlayerGui.GuiItemsGui
-    
+local ImGay = game:GetService("Players").LocalPlayer.PlayerGui.GuiItemsGui
 _G.aa = true
 while _G.aa and wait(1) do
-      pcall(function()
-                local Events = getconnections(ImGay:FindFirstChild("Magnet").MouseButton1Click)
-                for i,v in pairs(Events) do
-                    wait(1)
-                    v.Function()
-
-                end
-            end)
+    pcall(function()
+        for i,v in pairs(getconnections(ImGay:FindFirstChild("Magnet").MouseButton1Click)) do
+            wait(1)
+            v.Function()
+        end
+    end)
 end
 end)
 
@@ -46,17 +43,26 @@ if shared.fuck then
 end
 shared.fuck = true
 local AlsoGay = game:GetService("Players").LocalPlayer.PlayerGui.GuiItemsGui
-    
 _G.cc = true
 while _G.cc and wait(1) do
-      pcall(function()
-                local AlsoEvents = getconnections(AlsoGay:FindFirstChild("Tire").MouseButton1Click)
-                for k,b in pairs(AlsoEvents) do
-                    wait(1.5)
-                    b.Function()
+    pcall(function()
+        for f,d in pairs(getconnections(AlsoGay:FindFirstChild("Tire").MouseButton1Click)) do 
+            wait(1)
+            d.Function()
+        end
+    end)
+end
+end)
 
-                end
-            end)
+--coins
+w:Section("Collect")
+local k = w:Button("Collect Dropped Coins", function()
+    
+    for _,v in pairs (game:GetService("Workspace").Items:GetChildren()) do
+if v:FindFirstChild("TouchInterest") then
+    firetouchinterest(v, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"),0)
+firetouchinterest(v, game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"),1)
+end
 end
 end)
 
@@ -67,7 +73,7 @@ local f = w:Button("Auto Clicker On", function()
 _G.yeet = true
 while _G.yeet and wait() do
 vu:Button1Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-wait(0.1)
+wait(0.2)
 vu:Button1Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end
 end)
