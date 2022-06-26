@@ -20,7 +20,7 @@ local ImGay = game:GetService("Players").LocalPlayer.PlayerGui.GuiItemsGui
 _G.aa = true
 while _G.aa and wait(1) do
     pcall(function()
-        for i,v in pairs(getconnections(ImGay:FindFirstChild("Magnet").MouseButton1Click)) do
+        for i,v in pairs(getconnections(ImGay:WaitForChild("Magnet").MouseButton1Click)) do
             wait(1)
             v.Function()
         end
@@ -46,7 +46,7 @@ local AlsoGay = game:GetService("Players").LocalPlayer.PlayerGui.GuiItemsGui
 _G.cc = true
 while _G.cc and wait(1) do
     pcall(function()
-        for f,d in pairs(getconnections(AlsoGay:FindFirstChild("Tire").MouseButton1Click)) do 
+        for f,d in pairs(getconnections(AlsoGay:WaitForChild("Tire").MouseButton1Click)) do 
             wait(1)
             d.Function()
         end
