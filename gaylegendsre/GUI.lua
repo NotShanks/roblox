@@ -58,7 +58,7 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.LightKick.ServerScript.Throw:FireServer(unpack(args))
 end)
 
-local bfdb = w:Button("Broly ", function()
+local bfdb = w:Button("Broly", function()
 local args = {
     [1] = game:GetService("Players").LocalPlayer.Character,
     [2] = game:GetService("Workspace").Legendary.HumanoidRootPart.Position
@@ -68,10 +68,36 @@ game:GetService("Players").LocalPlayer.Character.LightKick.ServerScript.Throw:Fi
 end)
 
 
+local aaffs = w:Button("Michkal", function()
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character,
+    [2] = game:GetService("Workspace").Michkal.HumanoidRootPart.Position
+}
 
-w:Section("Misc")
+game:GetService("Players").LocalPlayer.Character.LightKick.ServerScript.Throw:FireServer(unpack(args))
+end)
 
-local oianb = w:Button("Render Places", function()
+
+--MISC
+
+
+
+local c = library:CreateWindow('guis')
+c:Section("GUIS")
+
+local gna = c:Button("Septix GUI", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/LegendsReWritten'),true))()
+
+end)
+
+local gah = c:Button("V.G Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+
+end)
+
+c:Section("Misc")
+
+local oianb = c:Button("Render Places", function()
     -- Broly
 local plr = game:service"Players".LocalPlayer;
 local tween_s = game:service"TweenService";
@@ -92,8 +118,8 @@ wait(3.5)
 tp(-3225, 444, -1013);
 end)
 
-local oaf = w:Button("Check Bosses", function()
-    local gay = {"Dragon", "WinterColossus", "Nodrye", "Legendary", "Legandary"}
+local oaf = c:Button("Check Bosses", function()
+    local gay = {"Dragon", "Melioofus", "WinterColossus", "Nodrye", "Legendary", "Legandary", "Michkal"}
 for i,v in pairs(game.Workspace:GetDescendants()) do
      for a,b in pairs(gay) do
          if string.find(v.Name, b) and v:FindFirstChild("HumanoidRootPart") then
@@ -108,19 +134,6 @@ for i,v in pairs(game.Workspace:GetDescendants()) do
     end
 end
 end
-end)
-
-local c = library:CreateWindow('guis')
-c:Section("GUIS")
-
-local gna = c:Button("Septix GUI", function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/LegendsReWritten'),true))()
-
-end)
-
-local gah = c:Button("V.G Hub", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
-
 end)
 
 local boiuge = c:Button("ServerHop", function()
