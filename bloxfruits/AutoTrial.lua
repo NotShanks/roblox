@@ -27,7 +27,7 @@ if (d.Value == "Human") then
         game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
         else if (d.Value == "Fishman") then
             Teleport:Smart(1, fish)
-            wait(1)
+            wait(5)
             game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
         end
     end
