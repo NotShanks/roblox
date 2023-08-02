@@ -54,11 +54,11 @@ if game.GameId == 578392296 then
         notify("Server Hopping")
         task.wait(1)
         serverHop()
-        cool()
+        loadstring(game:HttpGet("https://pastebin.com/raw/fqe3Y0mM", true))()
     else
         notify("Server Hopping")
         serverHop()
-        cool()
+        loadstring(game:HttpGet("https://pastebin.com/raw/fqe3Y0mM", true))()
     end
 
 end
