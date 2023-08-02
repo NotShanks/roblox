@@ -24,14 +24,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/roblox/main
 end
 
 local function cool()
-(
     local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/5411459567/servers/Public?sortOrder=Asc&limit=100"))
 for i,v in pairs(Servers.data) do
   if v.playing ~= v.maxPlayers then
       game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
   end
 end
-)
+
+    end
 
 if game.GameId == 578392296 then
     if game.PlaceId ~= 5411459567 then
