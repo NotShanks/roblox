@@ -19,7 +19,7 @@ end
 
 local function serverHop()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/main.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/roblox/main/aba.lua", true))()
 
 end
 
