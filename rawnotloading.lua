@@ -19,7 +19,7 @@ end
 
 local function serverHop()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/roblox/main/ffaif.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NotShanks/roblox/main/rawnotloading.lua", true))()
 
 end
 
