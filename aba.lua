@@ -30,7 +30,6 @@ for i,v in pairs(Servers.data) do
       game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
   end
 end
-
     end
 
 if game.GameId == 578392296 then
